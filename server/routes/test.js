@@ -1,6 +1,5 @@
 const { Router } = require('express');
-const { getUsers } = require('../database/user.js');
-const { register, getPw } = require('../database/auth.js')
+const { getUsers, register, login } = require('../database/user.js');
 
 const router = Router();
 
@@ -33,7 +32,7 @@ router.post('/register', async (req, res) => {
 
 router.get('/login', async (req, res) => {
   try {
-    const result = await getPw(req.query.user_id);
+    const result = await login(req.query.username);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
