@@ -1,4 +1,4 @@
-import { pgPool } from './connection.js';
+const { pgPool } = require('./connection.js');
 
 const sql = {
   GET_USER: 'SELECT user_id, username, email, created FROM users WHERE user_id=$1',
@@ -17,4 +17,4 @@ async function getUsers(user_id) {
   return { code: 202, content: result.rows };
 }
 
-export { getUsers };
+module.exports = { getUsers };

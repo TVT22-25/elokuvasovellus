@@ -1,5 +1,5 @@
-import pkg from 'pg';
-const { Pool } = pkg;
+const pg = require('pg');
+const { Pool } = pg;
 
 const pgPool = new Pool({
   host: 'dpg-cle4lomf27hc738q1dvg-a.frankfurt-postgres.render.com',
@@ -16,4 +16,4 @@ pgPool.connect((err) => {
   }
 });
 
-export { pgPool };
+module.exports = { pgPool };
