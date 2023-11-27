@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'swiper/css';
+//import Main from './Components/Main.js';
+//import Movie from './Movie';
+//import './Components/style.css';
+//import Card from './Components/Card.js';
 import './App.css';
+import Header from './pages/Header.jsx';
+import Banner from './pages/Banner.jsx';
 
 function App() {
+
+  //return (
+  //  <>
+  //    <Main/>
+  //  </>
+  // );
+
+  //return (
+  //  <div>
+  //    <Movie/>
+  //  </div>
+  // );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Banner />
+    </>
   );
 }
 
