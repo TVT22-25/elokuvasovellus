@@ -1,7 +1,7 @@
 const { Router } = require('express');
-const { getUsers, getUserGroups, postUser, loginUser, updateUser, deleteUser } = require('../database/user.js');
+const { getUsers, getUserGroups, getUserReviews, postUser, loginUser, updateUser, deleteUser } = require('../database/user.js');
 const { getGroups, getGroupUsers, postGroup, deleteGroup, postGroupUser, updateGroup, deleteGroupUser } = require('../database/group.js');
-const { getReviews } = require('../database/review.js');
+const { getReviews, getMovieReviews, postReview, updateReview, deleteReview } = require('../database/review.js');
 
 const router = Router();
 
@@ -18,6 +18,16 @@ router.get('/users', async (req, res) => {
 router.get('/users/groups', async (req, res) => {
   try {
     const result = await getUserGroups(req.body.user_id);
+    res.status(result.code).json(result.content);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+});
+
+router.get('/users/reviews', async (req, res) => {
+  try {
+    const result = await getUserReviews(req.body.user_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
@@ -159,7 +169,51 @@ router.delete('/groups/users/delete', async (req, res) => {
 
 router.get('/reviews', async (req, res) => {
   try {
-    const result = await getReviews(req.body.user_id);
+    const result = await getReviews(req.body.review_id);
+    res.status(result.code).json(result.content);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+});
+
+router.get('/reviews/movie', async (req, res) => {
+  try {
+    const result = await getMovieReviews(req.body.movie_id);
+    res.status(result.code).json(result.content);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+});
+
+router.post('/reviews', async (req, res) => {
+  try {
+    const result = await postReview(req.body.user_id, req.body.movie_id, req.body.rating, req.body.comment);
+    res.status(result.code).json(result.content);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+});
+
+router.put('/reviews/update', async (req, res) => {
+  try {
+    const review_id = req.body.review_id;
+    const updateFields = { ...req.body };
+    delete updateFields.review_id; 
+
+    const result = await updateReview(review_id, updateFields);
+    res.status(result.code).json(result.content);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
+});
+
+router.delete('/reviews/delete', async (req, res) => {
+  try {
+    const result = await deleteReview(req.body.review_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
