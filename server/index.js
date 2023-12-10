@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
-const userTestRouter = require('./routes/userTest');
-const groupTestRouter = require('./routes/groupTest');
-const reviewTestRouter = require('./routes/reviewTest');
+const userRouter = require('./routes/user');
+const groupRouter = require('./routes/group');
+const reviewRouter = require('./routes/review');
 const app = express();
 
 app.use(express.json());
@@ -14,9 +14,9 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-app.use('/users', userTestRouter);
-app.use('/groups', groupTestRouter);
-app.use('/reviews', reviewTestRouter);
+app.use('/users', userRouter);
+app.use('/groups', groupRouter);
+app.use('/reviews', reviewRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello');

@@ -7,7 +7,7 @@ const saltRounds = 10;
 const secretKey = 'secret-key';
 const router = express.Router();
 
-router.get('/', authenticateToken, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const result = await getUsers(req.body.user_id);
     res.status(result.code).json(result.content);
