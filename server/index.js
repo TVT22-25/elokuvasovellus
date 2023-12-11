@@ -1,20 +1,22 @@
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
-const router = require('./routes/router');
-const testRouter = require('./routes/test');
+const userRouter = require('./routes/user');
+const groupRouter = require('./routes/group');
+const reviewRouter = require('./routes/review');
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-app.use('/test', testRouter);
+app.use('/users', userRouter);
+app.use('/groups', groupRouter);
+app.use('/reviews', reviewRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello');
