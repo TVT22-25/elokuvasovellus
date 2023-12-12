@@ -1,8 +1,15 @@
 import React from 'react';
 import './movieContent.css';
 import Button from './Button';
+import { useNavigate } from "react-router-dom";
 
 function MovieContent({ movie }) {
+    const navigate = useNavigate();
+
+    const handleReviewClick = () => {
+        navigate('/review', { state: { movie: JSON.stringify(movie) } });
+    }
+
     return (
         <div className={`content ${movie.active ? 'active' : undefined}`}>
             <img src={movie.poster_path} alt="" className="movie-title" />
@@ -20,6 +27,7 @@ function MovieContent({ movie }) {
                 name="Review"
                 color="#ff3700"
                 bgColor="#ffffff"
+                onClick={handleReviewClick}
                 />
                 <Button icon={<ion-icon name="add-outline"></ion-icon>}
                 name="Add as favourite"

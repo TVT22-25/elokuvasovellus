@@ -82,7 +82,7 @@ router.get('/login', async (req, res) => {
 
 router.put('/update', authenticateToken, async (req, res) => {
   try {
-    const user_id = req.body.user_id;
+    const user_id = req.user.user_id;
     const updateFields = { ...req.body };
     delete updateFields.user_id; 
 
@@ -96,7 +96,7 @@ router.put('/update', authenticateToken, async (req, res) => {
 
 router.delete('/delete', authenticateToken, async (req, res) => {
   try {
-    const result = await deleteUser(req.body.user_id);
+    const result = await deleteUser(req.user.user_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
