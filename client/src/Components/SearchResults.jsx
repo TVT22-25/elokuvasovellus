@@ -1,13 +1,16 @@
 import React from 'react';
+import './style.css';
 import './SearchResults.css';
+import Header from '../pages/Header.jsx';
+import '../pages/header.css';
 
 const SearchResults = () => {
   return (
     <div className="search-results-container">
       {/* Include your header component */}
-      <header>
+      <Header>
         {/* ... your header content */}
-      </header>
+      </Header>
 
       {/* Search results content */}
       <div className="search-results-content">

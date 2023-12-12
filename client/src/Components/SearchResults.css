@@ -1,101 +1,25 @@
 /* SearchResults.css */
 
-.search-results-container {
-    padding-top: 150px; /* Adjust as needed to ensure the header is visible */
-  }
-  
-  .search-results-content {
-    margin: auto;
-    width: 80%;
-    /* Add additional styling for the search results content */
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-.search-results {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 0 100px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-  }
-  
-  .search-results .container {
-    margin: auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .search-results .movie {
-    box-shadow: 0 5px 10 px rgba(0, 0, 0, 0.5);
-    width: 250px;
-    background-color: var(--secondary-color);
-    margin: 1rem;
-    border-radius: 5px;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .search-results .movie .poster {
-    width: 260px;
-    height: auto;
-  }
-  
-  .search-results .movie-details {
-    display: flex;
-    flex-direction: center;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .search-results .movie-details .box {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  
-  .search-results .movie-details .title {
-    width: 160px;
-    text-align: center;
-  }
-  
-  .search-results .movie-details .overview {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    max-height: 100%;
-    background-color: var(--secondary-color);
-    opacity: 0.9;
-    color: white;
-    box-sizing: border-box;
-    padding: 1rem;
-    transition: all 0.4s ease-in-out;
-    overflow-y: auto;
-    transform: translate(101%);
-  }
-  
-  .search-results .movie-details:hover .overview {
-    transform: translateY(0%);
-  }
-  
-  .search-results .rating {
-    background-color: var(--primary-color);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    border: 1px solid var(--primary-color);
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-  }
-  
+.search-results-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 100px;
+  overflow: hidden;
+  background: linear-gradient(to right, #183545 15px, #294c72 15px, #294c72 100%, #183545 100%);
+  color: rgb(253, 253, 253);
+}
+
+.search-results-content {
+  margin: auto;
+  width: 80%;
+  padding-top: 100px;
+  text-align: center;
+  /* Add additional styling for the search results content */
+}
+
+
+
+
