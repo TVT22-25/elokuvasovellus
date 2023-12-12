@@ -6,17 +6,26 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import Movie from './Movie';
 //import './Components/style.css';
 //import Card from './Components/Card.js';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './pages/Header.jsx';
 import Banner from './pages/Banner.jsx';
 import ReviewPage from './pages/Review';
+import SearchBar from './Components/SearchBar.jsx';
+import SearchResults from './Components/SearchResults.jsx';
 
 function MainPage() {
   return (
-    <>
-      <Header />
-      <Banner />
-    </>
+    <Router>
+      <>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Banner />} />
+          <Route path="/search-results" element={<SearchResults />} />
+        </Routes>
+        <SearchBar />
+      </>
+    </Router>
   );
 }
 
