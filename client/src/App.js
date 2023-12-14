@@ -10,6 +10,7 @@ import './App.css';
 import Header from './pages/Header.jsx';
 import Banner from './pages/Banner.jsx';
 import SearchResults from './Components/SearchResults.jsx';
+import ReviewPage from './pages/Review';
 
 function App() {
 
