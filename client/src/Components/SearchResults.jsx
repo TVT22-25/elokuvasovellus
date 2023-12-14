@@ -9,6 +9,7 @@ const SearchResults = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({
     year: '',
+    decade: '',
     rating: '',
   });
 
@@ -18,6 +19,13 @@ const SearchResults = () => {
 
   console.log('Search Term:', searchTerm);
 
+  // Function to generate an array of decades for the past century
+  const getPastDecades = () => {
+    const currentYear = new Date().getFullYear();
+    const startYear = currentYear - (currentYear % 10);
+    return Array.from({ length: startYear / 10 }, (_, index) => startYear - index * 10);
+  };
+
   const fetchSearchResults = (term, filters) => {
     // Construct the API URL with proper parameters
     const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=cf4d8fb3e32d1f38fd41fa0b0cf96851&query=${term}`;
@@ -25,12 +33,17 @@ const SearchResults = () => {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((json) => {
-        // Filter movies based on the release year and rating
+        // Filter movies based on the release year, decade, and rating
         const filteredMovies = json.results.filter((movie) => {
           // Extract the year from the "Release date" field
           const releaseYear = new Date(movie.release_date).getFullYear();
           // Check if the movie's release year matches the selected year filter
           const yearMatches = filters.year ? releaseYear.toString() === filters.year : true;
+
+          // Extract the decade from the "Release date" field
+          const releaseDecade = Math.floor(releaseYear / 10) * 10;
+          // Check if the movie's release decade matches the selected decade filter
+          const decadeMatches = filters.decade ? releaseDecade.toString() === filters.decade : true;
 
           // Extract the integer rating from the original rating (ignoring decimals)
           const ratingInteger = Math.floor(parseFloat(movie.vote_average));
@@ -38,8 +51,8 @@ const SearchResults = () => {
           // Check if the movie's rating matches the selected rating filter
           const ratingMatches = filters.rating ? ratingInteger.toString() === filters.rating : true;
 
-          // Return true if both year and rating conditions are satisfied
-          return yearMatches && ratingMatches;
+          // Return true if all year, decade, and rating conditions are satisfied
+          return yearMatches && decadeMatches && ratingMatches;
         });
 
         // Set the filtered results
@@ -68,7 +81,31 @@ const SearchResults = () => {
             <option value="">All Years</option>
             <option value="2023">2023</option>
             <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
+            <option value="2010">2010</option>
             {/* Add more year options as needed */}
+          </select>
+        </div>
+
+        <div>
+          <label>Decade:</label>
+          <select onChange={(e) => handleFilterChange('decade', e.target.value)}>
+            <option value="">All Decades</option>
+            {getPastDecades().map((decade) => (
+              <option key={decade} value={decade.toString()}>
+                {`${decade}s`}
+              </option>
+            ))}
           </select>
         </div>
 
