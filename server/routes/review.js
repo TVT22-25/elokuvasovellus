@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   try {
-    const result = await getReviews(req.body.review_id);
+    const result = await getReviews(req.query.review_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   
 router.get('/movie', async (req, res) => {
   try {
-    const result = await getMovieReviews(req.body.movie_id);
+    const result = await getMovieReviews(req.query.movie_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);

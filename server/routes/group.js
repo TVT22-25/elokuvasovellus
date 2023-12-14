@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   try {
-    const result = await getGroups(req.body.user_id);
+    const result = await getGroups(req.query.user_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   
 router.get('/users', async (req, res) => {
   try {
-    const result = await getGroupUsers(req.body.group_id);
+    const result = await getGroupUsers(req.query.group_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
