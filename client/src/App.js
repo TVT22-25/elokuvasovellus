@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './pages/Header.jsx';
 import Banner from './pages/Banner.jsx';
-import SearchBar from './Components/SearchBar.jsx';
 import SearchResults from './Components/SearchResults.jsx';
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
           <Route path="/" element={<Banner />} />
           <Route path="/search-results" element={<SearchResults />} />
         </Routes>
-        <SearchBar />
       </>
     </Router>
   );
