@@ -1,11 +1,12 @@
 const { Router } = require('express');
 const { getGroups, getGroupUsers, postGroup, deleteGroup, postGroupUser, updateGroup, deleteGroupUser } = require('../database/group.js');
+const authenticateToken = require('./authentication.js');
 
 const router = Router();
 
 router.get('/', async (req, res) => {
   try {
-    const result = await getGroups(req.body.user_id);
+    const result = await getGroups(req.query.user_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
   
 router.get('/users', async (req, res) => {
   try {
-    const result = await getGroupUsers(req.body.group_id);
+    const result = await getGroupUsers(req.query.group_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
@@ -23,7 +24,7 @@ router.get('/users', async (req, res) => {
   }
 });
   
-router.post('/register', async (req, res) => {
+router.post('/register', authenticateToken, async (req, res) => {
   const { group_name, description  } = req.body;
   
   try {
@@ -40,9 +41,9 @@ router.post('/register', async (req, res) => {
   }
 });
   
-router.post('/postuser', async (req, res) => {
+router.post('/postuser', authenticateToken, async (req, res) => {
   try {
-    const result = await postGroupUser(req.body.user_id, req.body.group_id);
+    const result = await postGroupUser(req.user.user_id, req.body.group_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);
@@ -50,7 +51,7 @@ router.post('/postuser', async (req, res) => {
   }
 });
   
-router.put('/update', async (req, res) => {
+router.put('/update', authenticateToken, async (req, res) => {
   try {
     const group_id = req.body.group_id;
     const updateFields = { ...req.body };
@@ -64,7 +65,7 @@ router.put('/update', async (req, res) => {
   }
 });
   
-router.delete('/delete', async (req, res) => {
+router.delete('/delete', authenticateToken, async (req, res) => {
   try {
     const result = await deleteGroup(req.body.group_id);
     res.status(result.code).json(result.content);
@@ -74,9 +75,9 @@ router.delete('/delete', async (req, res) => {
   }
 });
   
-router.delete('/users/delete', async (req, res) => {
+router.delete('/users/delete', authenticateToken, async (req, res) => {
   try {
-    const result = await deleteGroupUser(req.body.user_id, req.body.group_id);
+    const result = await deleteGroupUser(req.user.user_id, req.body.group_id);
     res.status(result.code).json(result.content);
   } catch (error) {
     console.error(error);

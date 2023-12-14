@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'swiper/css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //import Main from './Components/Main.js';
 //import Movie from './Movie';
 //import './Components/style.css';
@@ -16,19 +16,6 @@ import Register from './pages/Register.jsx';
 import Reviews from './pages/Reviews';
 
 function App() {
-
-  //return (
-  //  <>
-  //    <Main/>
-  //  </>
-  // );
-
-  //return (
-  //  <div>
-  //    <Movie/>
-  //  </div>
-  // );
-
   return (
     <Router>
       <>

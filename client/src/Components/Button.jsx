@@ -1,16 +1,31 @@
-import React from 'react';
-import './button.css';
+// import React from 'react';
+// import './button.css';
 
-function Button ({ icon, name, color = '#ffffff', bgColor = '#ff3698' }) {
+// function Button ({ icon, name, color = '#ffffff', bgColor = '#ff3698' }) {
+//     return (
+//         <a 
+//             href="#"
+//             className="mainBtn"
+//             style={{color: color, background: bgColor}}
+//         >
+//             {icon} {name}
+//         </a>
+//     );
+// }
+
+// export default Button;
+
+function Button ({ icon, name, color = '#ffffff', bgColor = '#ff3698', onClick }) {
     return (
-        <a 
-            href="#"
+        <button 
             className="mainBtn"
             style={{color: color, background: bgColor}}
+            onClick={onClick}
         >
             {icon} {name}
-        </a>
+        </button>
     );
 }
 
 export default Button;
+
