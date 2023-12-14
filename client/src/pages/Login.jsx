@@ -30,7 +30,7 @@ function LoginPage() {
     localStorage.setItem('username', data.username);
     localStorage.setItem('user_id', data.user_id);
 
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = '/';
   };
 
   return (
