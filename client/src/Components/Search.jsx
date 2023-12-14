@@ -22,6 +22,7 @@ function Search() {
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={handleKeyPress}
       />
+
       <ion-icon name="search-outline"></ion-icon>
     </div>
   );
