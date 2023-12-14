@@ -10,7 +10,7 @@ function LoginPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch('http://localhost:3001/users/login', {
+    const response = await fetch('/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function LoginPage() {
     localStorage.setItem('username', data.username);
     localStorage.setItem('user_id', data.user_id);
 
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = '/';
   };
 
   return (
