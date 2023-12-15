@@ -1,20 +1,20 @@
 const navListData = [
     {
         _id: 1,
-        link: '#',
+        link: '/',
         name: `home`,
         active: true,
     },
     {
         _id: 2,
-        link: '#jotain',
-        name: `jotain`,
+        link: '/profile',
+        name: `Käyttäjäprofiili`,
         active: false,
     },
     {
         _id: 3,
-        link: '#jotain',
-        name: `jotain`,
+        link: '/register',
+        name: `Register`,
         active: false,
     },
     {
