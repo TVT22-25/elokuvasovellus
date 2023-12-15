@@ -126,8 +126,6 @@ const SearchResults = () => {
           </select>
         </div>
 
-        {/* Add more filter UI elements as needed */}
-
         <h2>Search Results</h2>
         <SearchResultsContent movies={searchResults} />
       </div>

@@ -17,6 +17,8 @@
 .movie-title {
     max-width: 250px;
     margin-bottom: 20px;
+    font-size: 15px;
+    text-align: center;
 }
 
 .banner .content h4 {

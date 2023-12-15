@@ -14,9 +14,9 @@ function MovieContent({ movie }) {
         <div className={`content ${movie.active ? 'active' : undefined}`}>
             <img src={movie.poster_path} alt="" className="movie-title" />
             <h4>
-                <span>{movie.title}</span>
-                <span>Release date {movie.release_date}</span>
-                <span>Rating {movie.vote_average}</span>
+                <div className="title">{movie.title}</div>
+                <div className="release">Release date {movie.release_date}</div>
+                <div className="rating">Rating {movie.vote_average}</div>
             </h4>
             <p>
                 {movie.overview}
