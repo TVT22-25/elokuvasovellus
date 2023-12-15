@@ -22,7 +22,7 @@ function ReviewPage() {
       comment
     };
 
-    const response = await fetch('/reviews/post', {
+    const response = await fetch('http://localhost:3001/reviews/post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

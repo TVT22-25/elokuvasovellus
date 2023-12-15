@@ -9,7 +9,7 @@ const Reviews = () => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const response = await fetch(`/users/reviews?user_id=${id}`);
+      const response = await fetch(`http://localhost:3001/users/reviews?user_id=${id}`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
