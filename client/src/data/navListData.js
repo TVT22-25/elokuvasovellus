@@ -7,20 +7,8 @@ const navListData = [
     },
     {
         _id: 2,
-        link: '#jotain',
-        name: `jotain`,
-        active: false,
-    },
-    {
-        _id: 3,
-        link: '#jotain',
-        name: `jotain`,
-        active: false,
-    },
-    {
-        _id: 4,
-        link: '#jotain',
-        name: `jotain`,
+        link: 'usersettings',
+        name: `Profile settings`,
         active: false,
     },
 ];

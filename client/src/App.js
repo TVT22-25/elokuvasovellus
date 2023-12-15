@@ -14,6 +14,7 @@ import SearchResults from './Components/SearchResults.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Reviews from './pages/Reviews';
+import Usersettings from './pages/Usersettings.jsx';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/:id/reviews" element={<Reviews />} />
+          <Route path="/usersettings" element={<Usersettings />} />
         </Routes>
       </>
     </Router>
