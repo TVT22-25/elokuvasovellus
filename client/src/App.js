@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'swiper/css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //import Main from './Components/Main.js';
 //import Movie from './Movie';
 //import './Components/style.css';
@@ -10,7 +10,6 @@ import './App.css';
 import Header from './pages/Header.jsx';
 import Banner from './pages/Banner.jsx';
 import ReviewPage from './pages/Review';
-import SearchBar from './Components/SearchBar.jsx';
 import SearchResults from './Components/SearchResults.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
@@ -29,7 +28,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/:id/reviews" element={<Reviews />} />
         </Routes>
-        <SearchBar />
       </>
     </Router>
   );
