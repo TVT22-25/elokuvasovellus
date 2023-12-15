@@ -8,7 +8,7 @@
   min-height: 100vh;
   padding: 0 100px;
   overflow: hidden;
-  background: linear-gradient(to right, #183545 15px, #294c72 15px, #294c72 100%, #183545 100%);
+  background: rgba(0, 0, 0, 0.6);
   color: rgb(253, 253, 253);
 }
 
@@ -17,7 +17,6 @@
   width: 80%;
   padding-top: 100px;
   text-align: center;
-  /* Add additional styling for the search results content */
 }
 
 

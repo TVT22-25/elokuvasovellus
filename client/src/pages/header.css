@@ -9,10 +9,11 @@ header {
     padding: 30px 100px;
     transition: 0.5s;
     z-index: 10000;
+    background: #7a7878;
 }
 
 header.scrolled {
-    background: rgba(0, 0, 0, 0.6);
+    background: #7a7878;
     border-bottom: 2px solid var(--primary);
     border-image: linear-gradient(90deg, transparent, var(--primary), transparent) 30;
     backdrop-filter: blur(20px);

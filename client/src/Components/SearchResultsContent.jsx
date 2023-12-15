@@ -1,5 +1,6 @@
 // components/SearchResultsContent.jsx
 import React from 'react';
+import Card from './Card';
 import MovieContent from './MovieContent';
 
 const SearchResultsContent = ({ movies }) => {
@@ -8,6 +9,7 @@ const SearchResultsContent = ({ movies }) => {
       <div className="row">
         {movies.map((movie) => (
           <div className="col-lg-6 col-md-12" key={movie.id}>
+            <Card info={movie} />
             <MovieContent movie={movie} />
           </div>
         ))}
