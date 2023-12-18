@@ -14,12 +14,14 @@ Kuvassa 3 näkyy hakutuloksia. Haku on toteutettu sivun yläreunassa olevan haku
 ![login](https://github.com/TVT22-25/elokuvasovellus/assets/127750359/6cf7857c-7ea9-4a60-92df-8fb21d972d26)
 _Kuva 2: sisäänkirjautumisikkuna_
 
+
 ![search](https://github.com/TVT22-25/elokuvasovellus/assets/127750359/b2ecda5b-00a4-4502-84f6-1f922870bfd1)
 _Kuva 3: suodatetun haun tuloksia_
 
 Alkuperäistä ER-kaaviota (kuva 4). Varsinaiseen sovellukseen tuli myös tietokanta näkymien piilottamiselle/esiintuonnille.
 <img width="606" alt="database" src="https://github.com/TVT22-25/elokuvasovellus/assets/127750359/7fc6fb8b-4a8a-4148-bbcf-96c72a9b3e30">
 _Kuva 4: ER-kaavio_
+
 
 ![uiwireframe](https://github.com/TVT22-25/elokuvasovellus/assets/127750359/fc39f02d-ade6-4b09-8500-d4998c4831a4)
 _Kuva 5: UI-wireframe_
@@ -33,7 +35,9 @@ Nettisivun saa aloitettua avaamalla terminaalin client-kansiossa. Terminaaliin p
 ![startingclient](https://github.com/TVT22-25/elokuvasovellus/assets/127750359/64ea44e2-f079-4b8a-96d2-09fc68bdedcb)
 _Kuva 6: client-puolen käynnistys_
 
+
 Serverin, jota nettisivun käyttöön tarvitsee, voi aukaista avaamalla terminaalin server-kansioon. Terminaaliin pitää kirjoittaa npm install, mikä asentaa tarvittavat kirjastot. Seuraavaksi terminaaliin kirjoitetaan npm start, mikä aukaisee serverin. Terminaali täytyy pitää auki serverin käytön ajan (kuva 5).
+
 
 ![startingserver](https://github.com/TVT22-25/elokuvasovellus/assets/127750359/fdf05a98-f249-4c6b-bd59-2a2cef5ceba7)
 _Kuva 7: server-puolen käynnistys_
