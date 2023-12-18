@@ -1,4 +1,4 @@
-#Elokuvasovellus
+# Elokuvasovellus
 
 Oulun ammattikorkeakoulun web-ohjelmoinnin sovellusprojektina teimme nettisivun, jossa voi selata ja arvostella elokuvia, luoda oman käyttäjätilin ja etsiä elokuvia. Projektin tekijät ovat tieto- ja viestintätekniikan 2. vuoden opiskelijat Mauri Olli, Sasha Olli, Terhi Repo, Jasper Kari ja Jyri Rosle-Krekilä. Roolijakoa eri tehtävien teossa jaoimme Kanban-taulun avulla, jonne pilkoimme sovelluksen eri toimintoja, joista kukin pystyi ottamaan omia tehtäviä. Mauri, Olli ja Jasper vastasivat suunnittelupuolesta ollessaan ryhmän alkuperäisjäseniä, ja Jyri ja Terhi tulivat projektiryhmään myöhemmässä vaiheessa mukaan.
 Nettisivun serveri rakennettiin Node Expressillä, tietokantana käytettiin PostgreSQL:ää ja frontend tehtiin Reactilla. Kielinä olivat JSX, CSS, JavaScript ja SQL. Tietokanta ja valmis sovellus ovat Render-ympäristössä ja käyttää The Movie Database -sivuston rajapintoja.
@@ -19,7 +19,7 @@ _Kuva 4: ER-kaavio_
 ![uiwireframe](https://github.com/TVT22-25/elokuvasovellus/assets/127750359/fc39f02d-ade6-4b09-8500-d4998c4831a4)
 _Kuva 5: UI-wireframe_
 
-##Käyttöönotto
+## Käyttöönotto
 
 Ensimmäiseksi lataa projekti tietokoneellesi. Tähän tarvitset Git-sovelluksen. Jos sitä ei ole, käy asentamassa se. Jos et tiedä onko sinulla Git-sovellusta, voit kirjoittaa Git-version terminaaliin. Seuraavaksi avaa kansio, johon haluat ladata projektin ja kirjoita git clone https://github.com/TVT22-25/elokuvasovellus. Tämä lisää kansion elokuvasovellus, jossa projekti on. 
 Nettisivun saa aloitettua avaamalla terminaalin client-kansiossa. Terminaaliin pitää kirjoittaa npm install --legacy-peer-deps, mikä asentaa tarvittavat kirjastot. Komennon käyttö voi antaa monta varoitusta, mikä on normaalia. Seuraavaksi kirjoita npm start, mikä käynnistää nettisivun (kuva 4). Nettisivun pitäisi automaattisesti aueta selaimessa. Jos se ei aukea automaattisesti niin mene osoitteeseen http://localhost:3000 ja nettisivun pitäisi olla siellä. Terminaali täytyy pitää auki sivun käytön ajan.
